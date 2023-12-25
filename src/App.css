@@ -1,0 +1,23 @@
+/* Linking the Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Concert+One&family=Frank+Ruhl+Libre&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@300;500;800&family=Petit+Formal+Script&display=swap');
+
+/* Default styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Petit Formal Script', sans-serif; 
+  font-weight: bold;
+}
+.fristSection{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descraption{
+    width: 60%;
+    height: 60vh;
+    background-color: brown;
+}
