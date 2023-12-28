@@ -16,8 +16,9 @@
   .navPage {
       width: 100%;
       height: 100vh;
-    }
-  .navPage video{
+      transition: background-color 0.5s ease;
+  }
+.navPage video{
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -30,7 +31,7 @@
       font-size: 30px;
     }
     .userName h4{
-      color: white;
+      color: rgba(255, 255, 255, 0.568);
       font-weight: bold;
       font-size: 30px;
     }
@@ -44,6 +45,7 @@
   .userDetails img{
       width: 55%;
       height: 55%;
+      border-radius: 50% 50% ;
       margin: 1% 25%;
       }
       .userDetails h2{
@@ -54,8 +56,8 @@
           margin-top: 2%;
       }
       .userDetails h1{
-          color: white;
-          font-size: 60px;
+          color: rgba(255, 255, 255, 0.411);
+          font-size: 70px;
           font-weight: bold;
           text-align: center;
           margin-top: 3%;
@@ -109,8 +111,7 @@
       .skill{
           background-color: rgba(208, 208, 208, 0.149);
           height: 40vh;
-          width: 25%;
-          margin-top: 10px;
+          margin:auto ;
           border-radius:10px ;
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
           text-align: center;
@@ -147,10 +148,21 @@
       /* Experiece Section  */
       .experiecePart{
           width: 100%;
-          height: 90vh;
+          height: 100vh;
           margin-top: 2%;
           overflow: hidden;
           background-color: rgba(208, 208, 208, 0.149);
+      }
+      .expBody {
+        border-radius: 10px;
+        box-shadow: 0 5px 5px 10px #38373779;
+      }
+      .expBody p{
+        font-size: 18px;
+      }
+      .expBody button {
+        font-size: 22px;
+        font-weight: bold;
       }
        .accordion-body p{
           color: rgba(42, 42, 146, 0.648);
@@ -165,7 +177,7 @@
           justify-content: center;
        }
        .sectionAdd h2{
-          font-size: 60px;
+          font-size: 55px;
           font-weight: bold;
           color: rgba(1, 1, 36, 0.748);
        }
@@ -216,7 +228,7 @@
       align-items: center;
   }
   .educationCard{
-      width: 50%;
+      width: 90%;
       height: 40vh;
       background-color:rgba(208, 208, 208, 0.149);
       box-shadow: 5px 5px 10px #555555;
@@ -247,6 +259,7 @@
       border-radius: 5px;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
+  
   .imgcard {
       width: 25%;
       height: 65vh;
@@ -312,8 +325,178 @@
   } 
 
 }
+
+
  /* (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {  }
+@media (max-width: 575.98px) { 
+/* first section in home page */
+  .userName h4{
+    font-size: 25px;
+  }
+  .userDetails {
+    width:80%;
+    height: 50vh;
+    right: 10%;
+    bottom: 20vh;
+}
+  .userDetails h2{
+        font-size: 25px;
+    }
+  .userDetails h1{
+        font-size: 35px;
+    }
+   .dropdown img{
+    width: 75%;
+   }
+ /* section two in home page(topSkills) */
+ .topSkills{
+    height: 190vh;
+}
+.topSkillsBox{
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .skills{
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.skill{
+    height: 35vh;
+    margin-top: 5vh;
+} 
+.skill img{
+    width: 33%;
+}
+.skill h3{
+    font-size: 18px;
+}
+.skill p{
+    font-size: 14px;
+}
+.summarySection h2{
+    font-size: 45px;
+}
+.summarySection p{
+    font-size: 12px;
+    text-align: center;
+}
+ /* Experiece Section  */
+ .experiecePart{
+    margin-top: 2vh;
+    height: 140vh;
+}
+.expBody p{
+  font-size: 12px;
+}
+.expBody button {
+  font-size: 17px;
+}
+ .sectionAdd h2{
+    font-size: 30px;
+ }
+  /* all Skills section */
+  .allSkills{
+    height: 330vh;
+}
+ .skillBox{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skillBox img{
+    width: 25%;
+    top: 10%;
+    left: 37.5%;
+}
+.skillBox h2{
+     width:38%;
+    font-size: 28px;
+    bottom: 2%;
+    left: 31%;
+}
+/* educationPart */
+.educationPart{
+    width: 100%;
+    height: 60vh;
+}
+.educationCard{
+    height: 50vh;
+}
+.educationCard h2{
+    font-size: 30px;
+}
+.gradData {
+    height: 20vh;
+}
+.gradData h3{
+    font-size: 20px;
+}
+
+ /* business card section */
+ .businessCard{
+    height: 200vh;
+ }
+.imgcard {
+    height: 50vh;
+}
+.imgcard  img{
+    width: 30%;
+    height: 30vh;
+}
+.Card{
+    background-color: #555555;
+  }
+.jobDescription { 
+    background-color: bisque;
+    position: absolute;
+    top: 20px;
+   
+}
+.jobDescription h3{
+    font-size: 15px;
+}
+.jobDescription p{
+    font-size: 10px;
+}
+.jobDescription h2{
+    font-size: 20px;
+}
+.cardData{width: 100%;
+    height: 35vh;
+    margin-top: 15%;
+}
+.cardData h4{
+    font-size: 22px;
+    color: rgba(42, 42, 146, 0.648);
+    font-weight: bold;
+    margin-top: 10%;
+}
+.cv{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cv button{
+width: 52%;
+height: 7vh;
+}
+
+
+
+ }
+
+
+
+
+
+
 
 /* small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { }

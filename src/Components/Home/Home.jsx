@@ -1,4 +1,4 @@
-import React,{ Component } from "react";
+import React,{useState,useEffect,sticky} from "react";
 import { Link } from "react-router-dom";
 import V1 from "../assest/pexels-luz-calor-som-9341591 (Original).mp4";
 import Image1 from "../assest/pexels-photo-614810.jpeg";
@@ -7,25 +7,60 @@ import Image3 from "../assest/CREATIVITY.png";
 import Image4 from "../assest/POSITIVITY.png";
 import Image5 from "../assest/profile.jpg";
 import Image6 from "../assest/default-logo.png";
-export default class Home extends Component{
 
-  render(){
+  const Home = () => {
+  //  const [scrolled, setScrolled] = useState(false);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 200; 
+  //     setScrolled(isScrolled);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+  // window.addEventListener('scroll', function() {
+  //   const navbar = document.getElementById('navbar');
+  //   if (window.scrollY > 100) {
+  //     navbar.classList.add('scrolled');
+  //   } else {
+  //     navbar.classList.remove('scrolled');
+  //   }
+  // });
+  
+  // window.addEventListener('scroll', function() {
+  //   var navbar = document.getElementById("navbar");
+  //   var sticky = navbar.offsetTop;
+  
+  //   if (window.scrollY >= sticky) {
+  //     navbar.classList.add("sticky");
+  //   } else {
+  //     navbar.classList.remove("sticky");
+  //   }
+  // });
     return<>
     <div className="homePage">
-      {/* first section navpage */}
-    <div className="navPage">
+    
+     <div className="navPage">
         {/* background firstSection*/}
      <video  src={V1} autoPlay muted loop></video>
         {/* navbar section */}
-  <nav className="navbar contentnav navbar-expand-lg ">
-  <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg " id="navbar">
+      
+  <div className="nav-inner container-fluid">
     <div className="navbar-start">
     <div className="userImage"></div>
     <div className="userName"> <h4>Ahmed Mohiy</h4></div>
     </div>
+     
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     
     </div>
+
     <div className="navbar-end">
     <Link className="dropdown navbar-brand  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <img src={Image6}/>
@@ -41,80 +76,34 @@ export default class Home extends Component{
     
     </div>
   </div>
-    </nav>
+  </nav>
+   
     
-
-
-
-
-
-
-
-
-
-
-
-
+        
     <div className="userDetails d-flex justify-content-center align-items-center">
       <div>
-      <img className="rounded-circle border border-1"src={Image1} />
+      <img className="border border-1"src={Image1} />
         <h2>Ahmed Mohiy</h2>
         <h1></h1>
       </div>
         
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {/* section 2 in home page(topSkills) */}
     <div className="topSkills container">
        
          <div className="topSkillsBox container">
           <div className="skills row column-gap">
-              <div className="skill w-25 m-5 col-md-4">
+              <div className="skill  col-md-3 ">
               <img src={Image2}className="rounded-circle" />
               <h3>MOTIVATION</h3>
               <p>Click again or double click to start editing the text.</p></div>
-            <div className="skill w-25 m-5 col-md-4 ">
+            <div className="skill   col-md-3 ">
             <img src={Image3} className="rounded-circle "/>
               <h3>CREATIVITY</h3>
               <p>Click again or double click to start editing the text.</p>
             </div>
-            <div className="skill w-25 m-5 col-md-4">
+            <div className="skill  col-md-3">
             <img src={Image4} className="rounded-circle"/>
               <h3>POSITIVITY</h3>
               <p>Click again or double click to start editing the text.</p></div> 
@@ -133,8 +122,9 @@ export default class Home extends Component{
          <div className="sectionAdd">
           <h2>Work Experiece</h2>
          </div>
+         <hr />
         
-      <div className="accordion accordion-flush mt-5 container" id="accordionFlushExample">
+      <div className="expBody accordion accordion-flush mt-5 container" id="accordionFlushExample">
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -142,7 +132,7 @@ export default class Home extends Component{
       </button>
     </h2>
     <div id="flush-collapseOne"  data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">
+      <div className=" accordion-body">
       <p>Answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex. Suspendisse rhoncus laoreet purus quis elementum. Phasellus sed efficitur dolor, et ultricies sapien. Quisque fringilla sit amet dolor commodo efficitur. Aliquam et sem odio. In ullamcorper nisi nunc, et molestie ipsum iaculis sit amet.</p>
         <p>From : 2012  </p>
         <p>to : 2012  </p>
@@ -183,7 +173,7 @@ export default class Home extends Component{
         {/* section 4 allSkills Card */} 
         <div className="allSkills">
       <div className="sectionAdd">
-          <h2 className="mt-5">Top skills</h2>
+          <h2 className="mt-2">Top skills</h2>
         </div>
          <hr />
         <div className="row">
@@ -238,11 +228,17 @@ export default class Home extends Component{
             <h2>Education</h2>
             <hr />
                 <div className="row">
-                  <div className="gradData m-auto col-md-11">
+                  <div className="gradData m-auto col-md-5">
                     <h3> HS : school Name </h3>
                     <h3>Mark : Very Good</h3>
-                    <h3>BS: Bachelor of Computer Science</h3>
+                    <hr />
+                   </div>
+                   
+                  <div className="gradData m-auto col-md-5">
+                  <h3>BS: Bachelor of Computer Science</h3>
+                  
                     <h3>GPA : 3.4</h3>
+                    <hr />
                   </div>
                   
                 </div>
@@ -253,7 +249,7 @@ export default class Home extends Component{
     <div className="businessCard container ">
        
           <div className="row">
-            <div className="imgcard col-md-3 m-3">
+            <div className="imgcard col-md-3 ">
             <img src={Image5}/>
             </div>
 
@@ -295,4 +291,4 @@ export default class Home extends Component{
    
     </>
   }
-}
+export default Home;
