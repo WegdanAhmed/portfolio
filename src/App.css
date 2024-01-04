@@ -26,6 +26,15 @@
   position: absolute;
   top: 0;
   }
+  /* .navbar{width: 100%;
+    height: 10vh;
+    background-color: #55555588;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  } */
   .contentnav a{
       color: white;
       font-size: 30px;
@@ -45,7 +54,7 @@
   .userDetails img{
       width: 55%;
       height: 55%;
-      border-radius: 50% 50% ;
+      border-radius: 50% 50%;
       margin: 1% 25%;
       }
       .userDetails h2{
@@ -148,7 +157,7 @@
       /* Experiece Section  */
       .experiecePart{
           width: 100%;
-          height: 100vh;
+          height: 110vh;
           margin-top: 2%;
           overflow: hidden;
           background-color: rgba(208, 208, 208, 0.149);
@@ -325,9 +334,6 @@
   } 
 
 }
-
-
- /* (portrait phones, less than 576px) */
 @media (max-width: 575.98px) { 
 /* first section in home page */
   .userName h4{
@@ -436,80 +442,595 @@
 .gradData h3{
     font-size: 20px;
 }
-
  /* business card section */
  .businessCard{
-    height: 200vh;
- }
+    height: 110vh;
+}
 .imgcard {
-    height: 50vh;
+    display: none;
 }
-.imgcard  img{
-    width: 30%;
-    height: 30vh;
-}
-.Card{
-    background-color: #555555;
-  }
-.jobDescription { 
-    background-color: bisque;
-    position: absolute;
-    top: 20px;
-   
+.jobDescription{
+    height: 33vh;
 }
 .jobDescription h3{
-    font-size: 15px;
-}
-.jobDescription p{
-    font-size: 10px;
+    font-size: 18px;
 }
 .jobDescription h2{
-    font-size: 20px;
+    font-size: 22px;
 }
-.cardData{width: 100%;
-    height: 35vh;
-    margin-top: 15%;
+.jobDescription p{
+    font-size: 13px;
+}
+.cardData{
+    height: 65vh;
+}
+.cardData button{
+   width: 50%;
+   font-size: 15px;
 }
 .cardData h4{
-    font-size: 22px;
-    color: rgba(42, 42, 146, 0.648);
-    font-weight: bold;
-    margin-top: 10%;
+    font-size: 18px;
 }
-.cv{
-    width: 100%;
-    height: 10vh;
+.cardData hr{
+    display: none;
+
+ }}
+@media (min-width: 575.98px) and (max-width: 768px) {
+    /* first section in home page */
+.userName h4{
+    font-size: 35px;
+  }
+  .userDetails {
+    width:70%;
+    height: 65vh;
+    right: 15%;
+    bottom: 15vh;
+}
+.userDetails img{
+    width: 50%;
+}
+  .userDetails h2{
+        font-size: 37px;
+    }
+  .userDetails h1{
+        font-size: 45px;
+    }
+   .dropdown img{
+    width: 90%;
+   }
+ /* section two in home page(topSkills) */
+ .topSkills{
+    height: 200vh;
+}
+.topSkillsBox{
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cv button{
-width: 52%;
-height: 7vh;
+ .skills{
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.skill{
+    height: 42vh;
+    margin-top: 5vh;
+} 
+.skill img{
+    width: 25%;
+}
+.skill h3{
+    font-size: 27px;
+}
+.skill p{
+    font-size: 17px;
+}
+.summarySection h2{
+    font-size: 50px;
+}
+.summarySection p{
+    font-size: 14px;
+    text-align: center;
+}
+ /* Experiece Section  */
+ .experiecePart{
+    margin-top: 2vh;
+    height: 135vh;
+}
+.expBody p{
+  font-size: 15px;
+}
+.expBody button {
+  font-size: 20px;
+}
+ .sectionAdd h2{
+    font-size: 40px;
+ }
+  /* all Skills section */
+  .allSkills{
+    height: 340vh;
+}
+ .skillBox{
+    height: 30vh;
+    width: 20%;
+}
+.skillBox img{
+    width: 15%;
+    top: 4%;
+    left: 42.5%;
+}
+.skillBox h2{
+    width:25%;
+    font-size: 30px;
+    bottom: 1%;
+    left: 37.5%;
+}
+/* educationPart */
+.educationPart{
+    width: 100%;
+    height: 60vh;
+}
+.educationCard{
+    height: 50vh;
+}
+.educationCard h2{
+    font-size: 40px;
+}
+.gradData {
+    height: 20vh;
+}
+.gradData h3{
+    font-size: 28px;
+}
+ /* business card section */
+ .businessCard{
+    height: 135vh;
+}
+.imgcard {
+    display: none;
+}
+.jobDescription{
+    height: 33vh;
+}
+.jobDescription h3{
+    font-size: 20px;
+}
+.jobDescription h3{
+    font-size: 28px;
+}
+.jobDescription p{
+    font-size: 15px;
+}
+.cardData{
+    height: 80vh;
+}
+.cardData button{
+   width: 40%;
+}
+.cardData h4{
+    font-size: 20px;
+}
+.cardData hr{
+    display: none;
+}
+  }
+@media (min-width: 768px) and (max-width: 991.98px) { 
+/* first section in home page */
+.userName h4{
+    font-size: 38px;
+  }
+  .userDetails {
+    width:60%;
+    height: 65vh;
+    right: 20%;
+    bottom: 15vh;
+}
+.userDetails img{
+    width: 40%;
+    margin: 1% 30%;
+}
+  .userDetails h2{
+        font-size: 40px;
+    }
+  .userDetails h1{
+        font-size: 50px;
+    }
+   .dropdown img{
+    width: 90%;
+   }
+ /* section two in home page(topSkills) */
+ .topSkills{
+    height: 100vh;
+}
+.topSkillsBox{
+    margin-top: 5vh;
+    height: 45vh;
+}
+ .skills{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .summarySection {
+  height: 45vh;
+}
+.skill{
+    height: 40vh;
+} 
+.skill img{
+    width: 60%;
+}
+.skill h3{
+    font-size: 25px;
+}
+.skill p{
+    font-size: 12px;
+}
+.summarySection h2{
+    font-size: 55px;
+}
+.summarySection p{
+    font-size: 15px;
+    text-align: center;
+}
+ /* Experiece Section  */
+ .experiecePart{
+    margin-top: 2vh;
+    height: 135vh;
+}
+.expBody p{
+  font-size: 15px;
+}
+.expBody button {
+  font-size: 20px;
+}
+ .sectionAdd h2{
+    font-size: 45px;
+ }
+  /* all Skills section */
+  .allSkills{
+    height: 90vh;
+}
+ .skillBox{
+    height: 33vh;
+}
+.skillBox img{
+    width: 70%;
+    top: 6%;
+    left: 15%;
+}
+.skillBox h2{
+    width:80%;
+    font-size: 20px;
+    bottom: 3%;
+    left: 10%;
+}
+/* educationPart */
+.educationPart{
+    width: 100%;
+    height: 60vh;
+}
+.educationCard{
+    height: 50vh;
+}
+.gradData hr{
+    display: none;
+}
+.educationCard h2{
+    font-size: 50px;
+}
+.gradData {
+    height: 25vh;
+}
+.gradData h3{
+    font-size: 30px;
+}
+/* business card section */
+ .businessCard{
+    height: 80vh;
+}
+.imgcard {
+    height: 50vh;
+}
+.imgcard  img{
+    height: 50vh;
+}
+.jobDescription { 
+    margin-top: 2%;
+}
+.jobDescription h3{
+    font-size: 25px;
+}
+.jobDescription h2{
+    font-size: 30px;
+}
+.jobDescription p{
+    font-size: 15px;
 }
 
-
-
+.cardData h4{
+    font-size: 15px;
+}
+.cv button{
+width: 30%;
+font-size: 15px;
+}
  }
+ @media (min-width: 991.98px) and (max-width: 1199.98px) { 
+/* first section in home page */
+.userName h4{
+    font-size: 40px;
+  }
+  .userDetails {
+    width:60%;
+    height: 65vh;
+    right: 20%;
+    bottom: 15vh;
+}
+.userDetails img{
+    width: 40%;
+    margin: 1% 30%;
+}
+  .userDetails h2{
+        font-size: 45px;
+    }
+  .userDetails h1{
+        font-size: 50px;
+    }
+ /* section two in home page(topSkills) */
+ .topSkills{
+    height: 100vh;
+}
+.topSkillsBox{
+    margin-top: 5vh;
+    height: 45vh;
+}
+ .skills{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .summarySection {
+  height: 45vh;
+}
+.skill{
+    height: 40vh;
+} 
+.skill img{
+    width: 60%;
+}
+.skill h3{
+    font-size: 25px;
+}
+.skill p{
+    font-size: 12px;
+}
+.summarySection h2{
+    font-size: 55px;
+}
+.summarySection p{
+    font-size: 15px;
+    text-align: center;
+}
+ /* Experiece Section  */
+ .experiecePart{
+    margin-top: 2vh;
+    height: 125vh;
+}
+.expBody p{
+  font-size: 15px;
+}
+.expBody button {
+  font-size: 20px;
+}
+ .sectionAdd h2{
+    font-size: 50px;
+ }
+  /* all Skills section */
+  .allSkills{
+    height: 90vh;
+}
+ .skillBox{
+    height: 33vh;
+}
+.skillBox img{
+    width: 70%;
+    top: 6%;
+    left: 15%;
+}
+.skillBox h2{
+    width:80%;
+    font-size: 22px;
+    bottom: 3%;
+    left: 12%;
+}
+/* educationPart */
+.educationPart{
+    width: 100%;
+    height: 60vh;
+}
+.educationCard{
+    height: 50vh;
+}
 
+.educationCard h2{
+    font-size: 50px;
+}
+.gradData {
+    height: 25vh;
+}
+.gradData h3{
+    font-size: 33px;
+}
+/* business card section */
+ .businessCard{
+    height: 85vh;
+}
+.imgcard {
+    height: 60vh;
+}
+.imgcard  img{
+    height: 65vh;
+}
+.jobDescription { 
+    margin-top: 2%;
+}
+.jobDescription h3{
+    font-size: 30px;
+}
+.jobDescription h2{
+    font-size: 35px;
+}
+.jobDescription p{
+    font-size: 15px;
+}
+.cardData h4{
+    font-size: 18px;
+}
+.cv button{
+width: 30%;
+font-size: 15px;
+}
+ }
+ @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+/* first section in home page */
+.userName h4{
+    font-size: 53px;
+  }
+  .userDetails {
+    width:60%;
+    height: 70vh;
+    right: 20%;
+    bottom: 10vh;
+}
+.userDetails img{
+    width: 35%;
+    margin: 1% 32.5%;
+}
+  .userDetails h2{
+        font-size: 50px;
+    }
+  .userDetails h1{
+        font-size: 55px;
+    }
+ /* section two in home page(topSkills) */
+ .topSkills{
+    height: 95vh;
+}
+.topSkillsBox{
+    margin-top: 5vh;
+    height: 45vh;
+}
+ .skills{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .summarySection {
+  height: 45vh;
+}
+.skill{
+    height: 45vh;
+} 
+.skill img{
+    width: 60%;
+}
+.skill h3{
+    font-size: 25px;
+}
+.skill p{
+    font-size: 15px;
+}
+.summarySection h2{
+    font-size: 58px;
+}
+.summarySection p{
+    font-size: 17px;
+    text-align: center;
+}
+ /* Experiece Section  */
+ .experiecePart{
+    margin-top: 2vh;
+    height: 128vh;
+}
+.expBody p{
+  font-size: 17px;
+}
+.expBody button {
+  font-size: 25px;
+}
+ .sectionAdd h2{
+    font-size: 54px;
+ }
+  /* all Skills section */
+  .allSkills{
+    height: 100vh;
+}
+ .skillBox{
+    height: 33vh;
+}
+.skillBox img{
+    width:60%;
+    top: 6%;
+    left: 20%;
+}
+.skillBox h2{
+    width:80%;
+    font-size: 25px;
+    bottom: 3%;
+    left: 18%;
+}
+/* educationPart */
+.educationPart{
+    width: 100%;
+    height: 60vh;
+}
+.educationCard{
+    height: 50vh;
+}
 
-
-
-
-
-
-/* small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { }
-
- /* medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { }
-
-/*  large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { }
-
-/* devices (large desktops, less than 1400px) */
-@media (max-width: 1399.98px) { }
-
-  
- 
+.educationCard h2{
+    font-size: 58px;
+}
+.gradData {
+    height: 25vh;
+}
+.gradData h3{
+    font-size: 35px;
+}
+/* business card section */
+ .businessCard{
+    height: 100vh;
+}
+.imgcard {
+    height: 70vh;
+}
+.imgcard  img{
+    height: 75vh;
+}
+.jobDescription { 
+    margin-top: 2%;
+}
+.jobDescription h3{
+    font-size: 38px;
+}
+.jobDescription h2{
+    font-size: 45px;
+}
+.jobDescription p{
+    font-size: 18px;
+}
+.cardData h4{
+    font-size: 25px;
+}
+.cv button{
+width: 30%;
+font-size: 18px;
+}
+  }
  
