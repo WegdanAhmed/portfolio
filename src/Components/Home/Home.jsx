@@ -348,7 +348,7 @@ import Image6 from "../assest/default-logo.png";
            <p>Date: {certificate.date}</p>
             </div>
            
-           <div className="col-md-4 d-flex justify-content-center">{certificate.photo && <img src={URL.createObjectURL(certificate.photo)} className="w-50" alt="Certificate" />}</div>
+           <div className="col-md-4 d-flex justify-content-center">{certificate.photo && <img src={URL.createObjectURL(certificate.photo)} alt="Certificate" />}</div>
          
 
 
