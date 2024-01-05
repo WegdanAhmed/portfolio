@@ -333,6 +333,54 @@
       color:rgba(1, 1, 67, 0.825) ;
   } 
 
+
+  /* certificatePart */
+  .certificatePart{
+    width: 100%;
+    height: 80vh;
+    margin-top: 3%;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 10px rgba(128, 128, 128, 0.479) ;
+    position: relative;
+  }
+
+  
+
+.showData{
+    width: 45%;
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    right: 2.5%;
+}
+.formData {
+    background-color: rgba(130, 127, 116, 0.368);
+    box-shadow: 0 5px 5px 10px rgba(128, 128, 128, 0.479) ;
+    border-radius: 10px;
+    width: 45%;
+    height: 30vh;
+    position: absolute;
+    top: 25vh;
+    left: 2.5%;
+}
+.formData input{
+    width: 90%;
+    margin: 10px 5%;
+}
+.formData button{
+    width: 25%;
+    height: 5vh;
+    background-color:rgba(128, 128, 128, 0.555);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    margin: 2vh 12.5%;
+}
+.certificate-item p{
+    font-size: 20px;
+    color: rgba(42, 42, 146, 0.648);
+}
+
 }
 @media (max-width: 575.98px) { 
 /* first section in home page */

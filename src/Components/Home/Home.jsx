@@ -9,6 +9,51 @@ import Image5 from "../assest/profile.jpg";
 import Image6 from "../assest/default-logo.png";
 
   const Home = () => {
+    const [certificates, setCertificates] = useState([]);
+  const [certificateData, setCertificateData] = useState({
+    name: '',
+    trainingCenter: '',
+    date: '',
+    photo: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCertificateData({
+      ...certificateData,
+      [name]: value,
+    });
+  };
+
+  const handlePhotoChange = (e) => {
+    setCertificateData({
+      ...certificateData,
+      photo: e.target.files[0],
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newCertificate = {
+      name: certificateData.name,
+      trainingCenter: certificateData.trainingCenter,
+      date: certificateData.date,
+      photo: certificateData.photo,
+    };
+
+    setCertificates([...certificates, newCertificate]);
+    setCertificateData({
+      name: '',
+      trainingCenter: '',
+      date: '',
+      photo: null,
+    });
+  };
+
+  const handleButtonClick = () => {
+    document.getElementById('fileInput').click();
+  };
+  
   //  const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -287,7 +332,71 @@ import Image6 from "../assest/default-logo.png";
           </div>
 
       </div>
-     </div>
+
+
+
+       {/* certificate part  */}
+         
+      
+       <div className="certificatePart container">
+      <div className="showData ">
+        {certificates.map((certificate, index) => (
+          <div key={index} className="certificate-item m-3 row">
+            <div className="col-md-8 ">
+            <p>{certificate.name}</p>
+           <p>Training Center: {certificate.trainingCenter}</p>
+           <p>Date: {certificate.date}</p>
+            </div>
+           
+           <div className="col-md-4 d-flex justify-content-center">{certificate.photo && <img src={URL.createObjectURL(certificate.photo)} className="w-50" alt="Certificate" />}</div>
+         
+
+
+           </div>
+            
+        ))}
+      </div>
+      <div className="formData">
+        <form onSubmit={handleSubmit}>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            value={certificateData.name}
+            onChange={handleChange}
+            placeholder="Certificate Name"
+          />
+          <input
+            className="form-control"
+            type="text"
+            name="trainingCenter"
+            value={certificateData.trainingCenter}
+            onChange={handleChange}
+            placeholder="Training Center"
+          />
+          <input
+            className="form-control"
+            type="text"
+            name="date"
+            value={certificateData.date}
+            onChange={handleChange}
+            placeholder="Date"
+          />
+          <input id="fileInput" className="selectImg" type="file" onChange={handlePhotoChange} accept="image/*" style={{ display: 'none' }} />
+          <button type="button" onClick={handleButtonClick} className="uploadButton">
+            Upload Image
+          </button>
+          <button type="submit">Add Certificate</button>
+        </form>
+      </div>
+    </div>
+        </div>  
+
+
+
+
+
+
    
     </>
   }
