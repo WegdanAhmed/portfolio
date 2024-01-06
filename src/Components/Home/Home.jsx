@@ -10,13 +10,36 @@ import Image6 from "../assest/default-logo.png";
 
   const Home = () => {
     const [certificates, setCertificates] = useState([]);
-  const [certificateData, setCertificateData] = useState({
-    name: '',
-    trainingCenter: '',
-    date: '',
-    photo: null,
-  });
-
+    const [certificateData, setCertificateData] = useState({
+      name: '',
+      trainingCenter: '',
+      date: '',
+      photo: null,
+    });
+  
+    // Load certificates and certificateData from localStorage 
+    useEffect(() => {
+      const storedCertificates = localStorage.getItem('certificates');
+      if (storedCertificates) {
+        setCertificates(JSON.parse(storedCertificates));
+      }
+  
+      const storedCertificateData = localStorage.getItem('certificateData');
+      if (storedCertificateData) {
+        setCertificateData(JSON.parse(storedCertificateData));
+      }
+    }, []);
+  
+    // Save certificates to localStorage 
+    useEffect(() => {
+      localStorage.setItem('certificates', JSON.stringify(certificates));
+    }, [certificates]);
+  
+    // Save certificateData to localStorage 
+    useEffect(() => {
+      localStorage.setItem('certificateData', JSON.stringify(certificateData));
+    }, [certificateData]);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCertificateData({
