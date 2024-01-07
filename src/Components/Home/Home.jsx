@@ -1,5 +1,7 @@
 import React,{useState,useEffect,sticky} from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import V1 from "../assest/pexels-luz-calor-som-9341591 (Original).mp4";
 import Image1 from "../assest/pexels-photo-614810.jpeg";
 import Image2 from "../assest/motivation.png";
@@ -72,11 +74,17 @@ import Image6 from "../assest/default-logo.png";
       photo: null,
     });
   };
+  const removeCertificate = (indexToRemove) => {
+    const updatedCertificates = certificates.filter((_, index) => index !== indexToRemove);
+    setCertificates(updatedCertificates);
+  };
+
 
   const handleButtonClick = () => {
     document.getElementById('fileInput').click();
   };
   
+
   //  const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -362,22 +370,26 @@ import Image6 from "../assest/default-logo.png";
          
       
        <div className="certificatePart container">
-      <div className="showData ">
-        {certificates.map((certificate, index) => (
-          <div key={index} className="certificate-item m-3 row">
-            <div className="col-md-8 ">
+       <div className="showData">
+      {certificates.map((certificate, index) => (
+        <div key={index} className="certificate-item m-3 row">
+          
+          <div className="col-md-8">
+          <div className="remove-icon m-1" onClick={() => removeCertificate(index)}>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
             <p>{certificate.name}</p>
-           <p>Training Center: {certificate.trainingCenter}</p>
-           <p>Date: {certificate.date}</p>
-            </div>
-           
-           <div className="col-md-4 d-flex justify-content-center">{certificate.photo && <img src={URL.createObjectURL(certificate.photo)} alt="Certificate" />}</div>
-         
-
-
-           </div>
-            
-        ))}
+            <p>Training Center: {certificate.trainingCenter}</p>
+            <p>Date: {certificate.date}</p>
+          </div>
+          <div className="col-md-4 d-flex justify-content-center">
+            {certificate.photo && <img src={URL.createObjectURL(certificate.photo)} alt="Certificate" />}
+          </div>
+        </div>
+      ))}
+    </div>
+      <div className="addPage">
+      <h2>Add Your Certificates</h2>
       </div>
       <div className="formData">
         <form onSubmit={handleSubmit}>
