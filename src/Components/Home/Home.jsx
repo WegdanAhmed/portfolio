@@ -1,6 +1,7 @@
 import React,{useState,useEffect,sticky} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useDropzone } from 'react-dropzone';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import V1 from "../assest/pexels-luz-calor-som-9341591 (Original).mp4";
 import Image1 from "../assest/pexels-photo-614810.jpeg";
@@ -11,6 +12,25 @@ import Image5 from "../assest/profile.jpg";
 import Image6 from "../assest/default-logo.png";
 
   const Home = () => {
+    // handel staky navbar
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentScrollPos = document.documentElement.scrollTop;
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+        setPrevScrollPos(currentScrollPos);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [prevScrollPos]);
+  
+  // handel certificte part
     const [certificates, setCertificates] = useState([]);
     const [certificateData, setCertificateData] = useState({
       name: '',
@@ -83,41 +103,52 @@ import Image6 from "../assest/default-logo.png";
   const handleButtonClick = () => {
     document.getElementById('fileInput').click();
   };
-  
+  // handel education part
+  const [highSchoolName, setHighSchoolName] = useState('');
+  const [highSchoolMark, setHighSchoolMark] = useState('');
+  const [highSchoolCertificate, setHighSchoolCertificate] = useState(null);
+  const [bachelorsName, setBachelorsName] = useState('');
+  const [bachelorsGPA, setBachelorsGPA] = useState('');
+  const [bachelorsCertificate, setBachelorsCertificate] = useState(null);
+  const [displayHighSchoolName, setDisplayHighSchoolName] = useState('');
+  const [displayHighSchoolMark, setDisplayHighSchoolMark] = useState('');
+  const [displayHighSchoolCertificate, setDisplayHighSchoolCertificate] = useState('');
+  const [displayBachelorsName, setDisplayBachelorsName] = useState('');
+  const [displayBachelorsGPA, setDisplayBachelorsGPA] = useState('');
+  const [displayBachelorsCertificate, setDisplayBachelorsCertificate] = useState('');
 
-  //  const [scrolled, setScrolled] = useState(false);
+  const handleHighSchoolNameChange = (event) => {
+    setHighSchoolName(event.target.value);
+  };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolled = window.scrollY > 200; 
-  //     setScrolled(isScrolled);
-  //   };
+  const handleHighSchoolMarkChange = (event) => {
+    setHighSchoolMark(event.target.value);
+  };
 
-  //   window.addEventListener('scroll', handleScroll);
+  const handleHighSchoolCertificateChange = (event) => {
+    setHighSchoolCertificate(event.target.files[0]);
+  };
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-  // window.addEventListener('scroll', function() {
-  //   const navbar = document.getElementById('navbar');
-  //   if (window.scrollY > 100) {
-  //     navbar.classList.add('scrolled');
-  //   } else {
-  //     navbar.classList.remove('scrolled');
-  //   }
-  // });
-  
-  // window.addEventListener('scroll', function() {
-  //   var navbar = document.getElementById("navbar");
-  //   var sticky = navbar.offsetTop;
-  
-  //   if (window.scrollY >= sticky) {
-  //     navbar.classList.add("sticky");
-  //   } else {
-  //     navbar.classList.remove("sticky");
-  //   }
-  // });
+  const handleBachelorsNameChange = (event) => {
+    setBachelorsName(event.target.value);
+  };
+
+  const handleBachelorsGPAChange = (event) => {
+    setBachelorsGPA(event.target.value);
+  };
+
+  const handleBachelorsCertificateChange = (event) => {
+    setBachelorsCertificate(event.target.files[0]);
+  };
+
+  const uploadData = () => {
+    setDisplayHighSchoolName(highSchoolName);
+    setDisplayHighSchoolMark(highSchoolMark);
+    setDisplayBachelorsName(bachelorsName);
+    setDisplayBachelorsGPA(bachelorsGPA);
+    setDisplayHighSchoolCertificate(URL.createObjectURL(highSchoolCertificate));
+    setDisplayBachelorsCertificate(URL.createObjectURL(bachelorsCertificate));
+  };
     return<>
     <div className="homePage">
     
@@ -125,7 +156,7 @@ import Image6 from "../assest/default-logo.png";
         {/* background firstSection*/}
      <video  src={V1} autoPlay muted loop></video>
         {/* navbar section */}
-    <nav className="navbar navbar-expand-lg " id="navbar">
+    <nav className={`navbar navbar-expand-lg ${visible ? 'visible' : 'hidden'}`} id="navbar">
       
   <div className="nav-inner container-fluid">
     <div className="navbar-start">
@@ -299,7 +330,7 @@ import Image6 from "../assest/default-logo.png";
 
           {/* section 5 Education Card  */} 
 
-         <div className="educationPart container">
+         {/* <div className="educationPart container">
            <div className="educationCard">
             <h2>Education</h2>
             <hr />
@@ -319,7 +350,50 @@ import Image6 from "../assest/default-logo.png";
                   
                 </div>
            </div>
-         </div>
+         </div> */}
+          <div className="educationPart container">
+        <div className="uploadEducationData">
+        <h2>Your Education </h2>
+        <input placeholder="High School Name"className="form-control w-75"type="text" id="highSchoolName" value={highSchoolName} onChange={handleHighSchoolNameChange} />
+        <input placeholder="Mark"className="form-control w-75" type="text" id="highSchoolMark" value={highSchoolMark} onChange={handleHighSchoolMarkChange} />
+        
+        <input
+    id="highSchoolCertificate"
+    type="file"
+    accept="image/*"
+    style={{ display: 'none' }}
+    onChange={handleHighSchoolCertificateChange}
+  />
+  <button type="button" onClick={() => document.getElementById('highSchoolCertificate').click()}>
+    Upload High School Certificate Image
+  </button>
+        <input placeholder="Bachelor's"className="form-control w-75" type="text" id="bachelorsName" value={bachelorsName} onChange={handleBachelorsNameChange} />
+        <input placeholder="GPA"className="form-control w-75" type="text" id="bachelorsGPA" value={bachelorsGPA} onChange={handleBachelorsGPAChange} />
+        <input
+          id="bachelorsCertificate"
+          type="file"
+          accept="image/*"
+          style={{ display: 'none' }}
+          onChange={handleBachelorsCertificateChange}
+           />
+         <button type="button" onClick={() => document.getElementById('bachelorsCertificate').click()}>
+          Upload BS Certificate Image
+         </button>
+         <br />
+        <button onClick={uploadData}>Upload</button>
+      </div>
+
+      <div className="myEducaionData">
+        <h2>Uploaded Data</h2>
+        <p> HighSchool: {displayHighSchoolName}</p>
+        <p> Mark: {displayHighSchoolMark}</p>
+        <img src={displayHighSchoolCertificate} alt="High School Certificate" />
+        <p>Bachelor's: {displayBachelorsName}</p>
+        <p>GPA: {displayBachelorsGPA}</p>
+        <img src={displayBachelorsCertificate} alt="Bachelor's Certificate" />
+      </div>
+    </div>
+   
 
     {/* section 7 E-Business Card section */} 
     <div className="businessCard container ">

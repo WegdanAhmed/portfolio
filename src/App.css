@@ -12,6 +12,17 @@
     font-family: 'Roboto'; 
     font-weight: bold;
   }
+  /* Define the styles for the visible and hidden classes */
+.visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hidden {
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    background-color: aquamarine;
+  }
   /* first section in home page */
   .navPage {
       width: 100%;
@@ -227,35 +238,28 @@
       left: 20%;
   }
   /* educationPart */
-  .educationPart{
+  .educationPart{background-color: aqua;
       width: 100%;
-      height: 50vh;
+      height: 80vh;
       margin: 3%;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
   }
-  .educationCard{
-      width: 90%;
-      height: 40vh;
-      background-color:rgba(208, 208, 208, 0.149);
-      box-shadow: 5px 5px 10px #555555;
-      border-radius: 10px;
+  .uploadEducationData{
+    width: 35%;
+    height: 50vh;
+    margin: 2.5%;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 10px #38373751 ;
   }
-  .educationCard h2{
-      text-align: center;
-      font-size: 60px;
-      font-weight: bold;
-      color: rgba(4, 4, 114, 0.489);  
-  }
-  .gradData {
-      height: 25vh;
-  }
-  .gradData h3{text-align: center;
-      font-size: 30px;
-      font-weight: bold;
-      color: rgba(4, 4, 114, 0.664);
+  .myEducaionData{
+    width: 50%;
+    height: 50vh;
+    margin: 2.5%;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 10px #38373748 ;
   }
   /* business card section */
   .businessCard{
