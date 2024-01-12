@@ -412,7 +412,6 @@
     font-weight: bold;
 }
 .formData {
-    background-color: rgba(130, 127, 116, 0.368);
     box-shadow: 0 5px 5px 10px rgba(128, 128, 128, 0.479) ;
     border-radius: 10px;
     width: 45%;
@@ -424,20 +423,20 @@
 .formData input{
     width: 90%;
     margin: 10px 5%;
+    background-color: rgba(248, 238, 226, 0.638);
 }
 .formData button{
     width: 25%;
     height: 5vh;
-    background-color:rgba(128, 128, 128, 0.555);
+    background-color: rgba(31, 31, 151, 0.648);
     border-radius: 25px;
     border: none;
     color: white;
     margin: 2vh 12.5%;
 }
 .certificate-item{
-    
     border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #55555556;
+    box-shadow: 0 5px 5px 10px #c9c7c73e;
 }
 .certificate-item p{
     font-weight: bold;
