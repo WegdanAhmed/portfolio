@@ -2,7 +2,6 @@ import React,{useState,useEffect,sticky} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-// import { useDropzone } from 'react-dropzone';
 import V1 from "../assest/pexels-luz-calor-som-9341591 (Original).mp4";
 import Image1 from "../assest/pexels-photo-614810.jpeg";
 import Image2 from "../assest/motivation.png";
@@ -417,28 +416,27 @@ import Image6 from "../assest/default-logo.png";
           <br />
           <button onClick={uploadData}>Upload</button>
         </div>
-         <div className="userData">
-          <div className="Item row">
-          <div className="col-md-8">
-         <p> High School: {displayData.displayHighSchoolName}</p>
-         <p> Mark: {displayData.displayHighSchoolMark}</p>
-         </div>
-         <div className="col-md-4 d-flex justify-content-center">
-         <img src={displayData.displayHighSchoolCertificate} alt="High School Certificate" />
-         </div>
-          </div>
-        <div className="Item row">
-        <div className="col-md-8">
-         <p>Bachelor's: {displayData.displayBachelorsName}</p>
-          <p>GPA: {displayData.displayBachelorsGPA}</p>
-         </div>
-         <div className="col-md-4 d-flex justify-content-center">
-         <img src={displayData.displayBachelorsCertificate} alt="Bachelor's Certificate" />
-         </div>
-          
-        </div>
-       
-        </div>
+        <div className="userData">
+  <div className="Item row">
+    <div className="col-md-8">
+      <p>{displayData.displayHighSchoolName}</p>
+      <p>Mark: {displayData.displayHighSchoolMark}</p>
+    </div>
+    <div className="col-md-4 d-flex justify-content-center">
+      <img src={displayData.displayHighSchoolCertificate} alt="High School Certificate" />
+    </div>
+  </div>
+
+  <div className="Item row">
+    <div className="col-md-8">
+      <p>{displayData.displayBachelorsName}</p>
+      <p>GPA: {displayData.displayBachelorsGPA}</p>
+    </div>
+    <div className="col-md-4 d-flex justify-content-center">
+      <img src={displayData.displayBachelorsCertificate} alt="Bachelor's Certificate" />
+    </div>
+  </div>
+</div>
       </div>
 
     {/* section 7 E-Business Card section */} 
