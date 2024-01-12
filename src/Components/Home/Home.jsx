@@ -352,23 +352,25 @@ import Image6 from "../assest/default-logo.png";
            </div>
          </div> */}
           <div className="educationPart container">
+          <h2>Education </h2>
+          <hr />
         <div className="uploadEducationData">
-        <h2>Your Education </h2>
-        <input placeholder="High School Name"className="form-control w-75"type="text" id="highSchoolName" value={highSchoolName} onChange={handleHighSchoolNameChange} />
-        <input placeholder="Mark"className="form-control w-75" type="text" id="highSchoolMark" value={highSchoolMark} onChange={handleHighSchoolMarkChange} />
+        <h3>Uploaded Your Data</h3>
+        <input placeholder="High School Name"className="form-control "type="text" id="highSchoolName" value={highSchoolName} onChange={handleHighSchoolNameChange} />
+        <input placeholder="Mark"className="form-control " type="text" id="highSchoolMark" value={highSchoolMark} onChange={handleHighSchoolMarkChange} />
         
         <input
-    id="highSchoolCertificate"
-    type="file"
-    accept="image/*"
-    style={{ display: 'none' }}
-    onChange={handleHighSchoolCertificateChange}
-  />
-  <button type="button" onClick={() => document.getElementById('highSchoolCertificate').click()}>
-    Upload High School Certificate Image
-  </button>
-        <input placeholder="Bachelor's"className="form-control w-75" type="text" id="bachelorsName" value={bachelorsName} onChange={handleBachelorsNameChange} />
-        <input placeholder="GPA"className="form-control w-75" type="text" id="bachelorsGPA" value={bachelorsGPA} onChange={handleBachelorsGPAChange} />
+         id="highSchoolCertificate"
+         type="file"
+         accept="image/*"
+         style={{ display: 'none' }}
+         onChange={handleHighSchoolCertificateChange}
+        />
+       <button type="button"  onClick={() => document.getElementById('highSchoolCertificate').click()}>
+          Upload Certificate Image
+       </button>
+        <input placeholder="Bachelor's"className="form-control " type="text" id="bachelorsName" value={bachelorsName} onChange={handleBachelorsNameChange} />
+        <input placeholder="GPA"className="form-control " type="text" id="bachelorsGPA" value={bachelorsGPA} onChange={handleBachelorsGPAChange} />
         <input
           id="bachelorsCertificate"
           type="file"
@@ -377,17 +379,16 @@ import Image6 from "../assest/default-logo.png";
           onChange={handleBachelorsCertificateChange}
            />
          <button type="button" onClick={() => document.getElementById('bachelorsCertificate').click()}>
-          Upload BS Certificate Image
+          Upload Certificate Image
          </button>
          <br />
         <button onClick={uploadData}>Upload</button>
       </div>
 
       <div className="myEducaionData">
-        <h2>Uploaded Data</h2>
         <p> HighSchool: {displayHighSchoolName}</p>
         <p> Mark: {displayHighSchoolMark}</p>
-        <img src={displayHighSchoolCertificate} alt="High School Certificate" />
+       <img src={displayHighSchoolCertificate} alt="High School Certificate" />
         <p>Bachelor's: {displayBachelorsName}</p>
         <p>GPA: {displayBachelorsGPA}</p>
         <img src={displayBachelorsCertificate} alt="Bachelor's Certificate" />

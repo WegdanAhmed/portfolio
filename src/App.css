@@ -238,28 +238,73 @@
       left: 20%;
   }
   /* educationPart */
-  .educationPart{background-color: aqua;
+  .educationPart{
       width: 100%;
       height: 80vh;
       margin: 3%;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+  }
+  .educationPart h2{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(18, 18, 136, 0.648);
   }
   .uploadEducationData{
     width: 35%;
-    height: 50vh;
+    height: 60vh;
     margin: 2.5%;
     border-radius: 10px;
     box-shadow: 0 5px 5px 10px #38373751 ;
+    position: absolute;
+    top: 10vh;
+    left:3.75%;
+  }
+  .uploadEducationData input{
+    width: 85%;
+    margin: 2vh 7.5%;
+    background-color: rgba(248, 238, 226, 0.638);
+  }
+  .uploadEducationData button{
+    width: 50%;
+    height: 5vh;
+    border: none;
+    font-size: 17px;
+    color: white;
+    margin: 1vh 25%;
+    border-radius: 25px;
+    background-color: rgba(31, 31, 151, 0.648);
+  }
+  .uploadEducationData h3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(18, 18, 136, 0.648);
   }
   .myEducaionData{
     width: 50%;
-    height: 50vh;
+    height: 60vh;
+    padding: 2%;
     margin: 2.5%;
     border-radius: 10px;
     box-shadow: 0 5px 5px 10px #38373748 ;
+    position: absolute;
+    top: 10vh;
+    right: 3.75%;
+  }
+  
+  .myEducaionData p{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(18, 18, 136, 0.648);
+  }
+  .myEducaionData img{
+    width: 28%;
   }
   /* business card section */
   .businessCard{
