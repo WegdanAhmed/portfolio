@@ -1,8 +1,8 @@
 import React,{useState,useEffect,sticky} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useDropzone } from 'react-dropzone';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { useDropzone } from 'react-dropzone';
 import V1 from "../assest/pexels-luz-calor-som-9341591 (Original).mp4";
 import Image1 from "../assest/pexels-photo-614810.jpeg";
 import Image2 from "../assest/motivation.png";
@@ -104,51 +104,77 @@ import Image6 from "../assest/default-logo.png";
     document.getElementById('fileInput').click();
   };
   // handel education part
-  const [highSchoolName, setHighSchoolName] = useState('');
-  const [highSchoolMark, setHighSchoolMark] = useState('');
-  const [highSchoolCertificate, setHighSchoolCertificate] = useState(null);
-  const [bachelorsName, setBachelorsName] = useState('');
-  const [bachelorsGPA, setBachelorsGPA] = useState('');
-  const [bachelorsCertificate, setBachelorsCertificate] = useState(null);
-  const [displayHighSchoolName, setDisplayHighSchoolName] = useState('');
-  const [displayHighSchoolMark, setDisplayHighSchoolMark] = useState('');
-  const [displayHighSchoolCertificate, setDisplayHighSchoolCertificate] = useState('');
-  const [displayBachelorsName, setDisplayBachelorsName] = useState('');
-  const [displayBachelorsGPA, setDisplayBachelorsGPA] = useState('');
-  const [displayBachelorsCertificate, setDisplayBachelorsCertificate] = useState('');
+  const [educationData, setEducationData] = useState({
+    highSchoolName: '',
+    highSchoolMark: '',
+    highSchoolCertificate: null,
+    bachelorsName: '',
+    bachelorsGPA: '',
+    bachelorsCertificate: null,
+  });
+
+  const [displayData, setDisplayData] = useState({
+    displayHighSchoolName: '',
+    displayHighSchoolMark: '',
+    displayHighSchoolCertificate: '',
+    displayBachelorsName: '',
+    displayBachelorsGPA: '',
+    displayBachelorsCertificate: '',
+  });
 
   const handleHighSchoolNameChange = (event) => {
-    setHighSchoolName(event.target.value);
+    setEducationData({
+      ...educationData,
+      highSchoolName: event.target.value,
+    });
   };
 
   const handleHighSchoolMarkChange = (event) => {
-    setHighSchoolMark(event.target.value);
+    setEducationData({
+      ...educationData,
+      highSchoolMark: event.target.value,
+    });
   };
 
   const handleHighSchoolCertificateChange = (event) => {
-    setHighSchoolCertificate(event.target.files[0]);
+    setEducationData({
+      ...educationData,
+      highSchoolCertificate: event.target.files[0],
+    });
   };
 
   const handleBachelorsNameChange = (event) => {
-    setBachelorsName(event.target.value);
+    setEducationData({
+      ...educationData,
+      bachelorsName: event.target.value,
+    });
   };
 
   const handleBachelorsGPAChange = (event) => {
-    setBachelorsGPA(event.target.value);
+    setEducationData({
+      ...educationData,
+      bachelorsGPA: event.target.value,
+    });
   };
 
   const handleBachelorsCertificateChange = (event) => {
-    setBachelorsCertificate(event.target.files[0]);
+    setEducationData({
+      ...educationData,
+      bachelorsCertificate: event.target.files[0],
+    });
   };
 
   const uploadData = () => {
-    setDisplayHighSchoolName(highSchoolName);
-    setDisplayHighSchoolMark(highSchoolMark);
-    setDisplayBachelorsName(bachelorsName);
-    setDisplayBachelorsGPA(bachelorsGPA);
-    setDisplayHighSchoolCertificate(URL.createObjectURL(highSchoolCertificate));
-    setDisplayBachelorsCertificate(URL.createObjectURL(bachelorsCertificate));
+    setDisplayData({
+      displayHighSchoolName: educationData.highSchoolName,
+      displayHighSchoolMark: educationData.highSchoolMark,
+      displayBachelorsName: educationData.bachelorsName,
+      displayBachelorsGPA: educationData.bachelorsGPA,
+      displayHighSchoolCertificate: URL.createObjectURL(educationData.highSchoolCertificate),
+      displayBachelorsCertificate: URL.createObjectURL(educationData.bachelorsCertificate),
+    });
   };
+
     return<>
     <div className="homePage">
     
@@ -330,71 +356,90 @@ import Image6 from "../assest/default-logo.png";
 
           {/* section 5 Education Card  */} 
 
-         {/* <div className="educationPart container">
-           <div className="educationCard">
-            <h2>Education</h2>
-            <hr />
-                <div className="row">
-                  <div className="gradData m-auto col-md-5">
-                    <h3> HS : school Name </h3>
-                    <h3>Mark : Very Good</h3>
-                    <hr />
-                   </div>
-                   
-                  <div className="gradData m-auto col-md-5">
-                  <h3>BS: Bachelor of Computer Science</h3>
-                  
-                    <h3>GPA : 3.4</h3>
-                    <hr />
-                  </div>
-                  
-                </div>
-           </div>
-         </div> */}
-          <div className="educationPart container">
-          <h2>Education </h2>
-          <hr />
+       <div className="educationPart container">
+        <h2>Education </h2>
+        <hr />
         <div className="uploadEducationData">
-        <h3>Uploaded Your Data</h3>
-        <input placeholder="High School Name"className="form-control "type="text" id="highSchoolName" value={highSchoolName} onChange={handleHighSchoolNameChange} />
-        <input placeholder="Mark"className="form-control " type="text" id="highSchoolMark" value={highSchoolMark} onChange={handleHighSchoolMarkChange} />
-        
-        <input
-         id="highSchoolCertificate"
-         type="file"
-         accept="image/*"
-         style={{ display: 'none' }}
-         onChange={handleHighSchoolCertificateChange}
-        />
-       <button type="button"  onClick={() => document.getElementById('highSchoolCertificate').click()}>
-          Upload Certificate Image
-       </button>
-        <input placeholder="Bachelor's"className="form-control " type="text" id="bachelorsName" value={bachelorsName} onChange={handleBachelorsNameChange} />
-        <input placeholder="GPA"className="form-control " type="text" id="bachelorsGPA" value={bachelorsGPA} onChange={handleBachelorsGPAChange} />
-        <input
-          id="bachelorsCertificate"
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleBachelorsCertificateChange}
-           />
-         <button type="button" onClick={() => document.getElementById('bachelorsCertificate').click()}>
-          Upload Certificate Image
-         </button>
-         <br />
-        <button onClick={uploadData}>Upload</button>
-      </div>
+          <h3>Uploaded Your Data</h3>
+          <input
+            placeholder="High School Name"
+            className="form-control"
+            type="text"
+            id="highSchoolName"
+            value={educationData.highSchoolName}
+            onChange={handleHighSchoolNameChange}
+          />
+          <input
+            placeholder="Mark"
+            className="form-control"
+            type="text"
+            id="highSchoolMark"
+            value={educationData.highSchoolMark}
+            onChange={handleHighSchoolMarkChange}
+          />
 
-      <div className="myEducaionData">
-        <p> HighSchool: {displayHighSchoolName}</p>
-        <p> Mark: {displayHighSchoolMark}</p>
-       <img src={displayHighSchoolCertificate} alt="High School Certificate" />
-        <p>Bachelor's: {displayBachelorsName}</p>
-        <p>GPA: {displayBachelorsGPA}</p>
-        <img src={displayBachelorsCertificate} alt="Bachelor's Certificate" />
+          <input
+            id="highSchoolCertificate"
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleHighSchoolCertificateChange}
+          />
+          <button type="button" onClick={() => document.getElementById('highSchoolCertificate').click()}>
+            Upload Certificate Image
+          </button>
+          <input
+            placeholder="Bachelor's"
+            className="form-control"
+            type="text"
+            id="bachelorsName"
+            value={educationData.bachelorsName}
+            onChange={handleBachelorsNameChange}
+          />
+          <input
+            placeholder="GPA"
+            className="form-control"
+            type="text"
+            id="bachelorsGPA"
+            value={educationData.bachelorsGPA}
+            onChange={handleBachelorsGPAChange}
+          />
+          <input
+            id="bachelorsCertificate"
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleBachelorsCertificateChange}
+          />
+          <button type="button" onClick={() => document.getElementById('bachelorsCertificate').click()}>
+            Upload Certificate Image
+          </button>
+          <br />
+          <button onClick={uploadData}>Upload</button>
+        </div>
+         <div className="userData">
+          <div className="Item row">
+          <div className="col-md-8">
+         <p> High School: {displayData.displayHighSchoolName}</p>
+         <p> Mark: {displayData.displayHighSchoolMark}</p>
+         </div>
+         <div className="col-md-4 d-flex justify-content-center">
+         <img src={displayData.displayHighSchoolCertificate} alt="High School Certificate" />
+         </div>
+          </div>
+        <div className="Item row">
+        <div className="col-md-8">
+         <p>Bachelor's: {displayData.displayBachelorsName}</p>
+          <p>GPA: {displayData.displayBachelorsGPA}</p>
+         </div>
+         <div className="col-md-4 d-flex justify-content-center">
+         <img src={displayData.displayBachelorsCertificate} alt="Bachelor's Certificate" />
+         </div>
+          
+        </div>
+       
+        </div>
       </div>
-    </div>
-   
 
     {/* section 7 E-Business Card section */} 
     <div className="businessCard container ">

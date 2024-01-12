@@ -290,27 +290,31 @@
     font-size: 30px;
     font-weight: bold;
     color: rgba(18, 18, 136, 0.648);
-  }
-  .myEducaionData{
+  }.userData{
     width: 50%;
-    height: 60vh;
+    height: 50vh;
     padding: 2%;
-    margin: 2.5%;
     border-radius: 10px;
     box-shadow: 0 5px 5px 10px #38373748 ;
     position: absolute;
-    top: 10vh;
+    top: 19vh;
     right: 3.75%;
   }
-  
-  .myEducaionData p{
+  .Item{
+    margin: 5vh 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 10px #38373748 ;
+  }
+ 
+  .userData p{
+    padding: 2%;
     font-size: 20px;
     font-weight: bold;
     color: rgba(18, 18, 136, 0.648);
   }
-  .myEducaionData img{
-    width: 28%;
-  }
+  .userData img{
+    width: 100%;
+  } 
   /* business card section */
   .businessCard{
       height: 85vh;
