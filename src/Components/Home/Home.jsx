@@ -12,24 +12,42 @@ import Image6 from "../assest/default-logo.png";
 
   const Home = () => {
     // handel staky navbar
-    const [prevScrollPos, setPrevScrollPos] = useState(300);
-    const [visible, setVisible] = useState(false);
+    // const [prevScrollPos, setPrevScrollPos] = useState(300);
+    // const [visible, setVisible] = useState(false);
   
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollPos = document.documentElement.scrollTop;
-        setVisible(prevScrollPos < currentScrollPos );
-        setPrevScrollPos(currentScrollPos);
-        console.log(currentScrollPos)
-      };
+    // useEffect(() => {
+    //   const handleScroll = () => {
+    //     const currentScrollPos = document.documentElement.scrollTop;
+    //     setVisible(prevScrollPos < currentScrollPos );
+    //     setPrevScrollPos(currentScrollPos);
+    //     console.log(currentScrollPos)
+    //   };
   
-      window.addEventListener('scroll', handleScroll);
+    //   window.addEventListener('scroll', handleScroll);
   
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [prevScrollPos]);
-  
+    //   return () => {
+    //     window.removeEventListener('scroll', handleScroll);
+    //   };
+    // }, [prevScrollPos]);
+    const [prevScrollPos, setPrevScrollPos] = useState(0); // start at 0
+  const [visible, setVisible] = useState(false);
+  const navClassChangePosition = 300; // Position at which you want to change the class
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      // If we scroll past the navClassChangePosition, set visible to true, otherwise false
+      setVisible(currentScrollPos >= navClassChangePosition);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
+
   // handel certificte part
     const [certificates, setCertificates] = useState([]);
     const [certificateData, setCertificateData] = useState({
