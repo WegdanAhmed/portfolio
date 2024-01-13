@@ -1,7 +1,5 @@
 /* Linking the Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Concert+One&family=Frank+Ruhl+Libre&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@300;500;800&family=Oleo+Script+Swash+Caps&family=Petit+Formal+Script&family=Roboto:ital@1&display=swap');
-
-
 /* Styles for all screens */
 @media screen {
     /* Default styling */
@@ -13,16 +11,21 @@
     font-weight: bold;
   }
   /* Define the styles for the visible and hidden classes */
-.visible {
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
+  .nav-visible {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.386);
   }
-  
-  .hidden {
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-    background-color: aquamarine;
+  .nav-hidden {
+    position: static !important;
   }
+  .dropdown-toggle::after {
+   display: none !important;
+  }
+ 
   /* first section in home page */
   .navPage {
       width: 100%;
@@ -126,7 +129,7 @@
           margin-top: 3vh;
           border-radius: 10px;
           overflow: hidden;
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow:0 2px 5px rgba(0, 0, 0, 0.247);
       }
       .skills{
           width: 100%;
@@ -137,7 +140,7 @@
           height: 40vh;
           margin:auto ;
           border-radius:10px ;
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247);
           text-align: center;
       } 
       .skill img{background-color: rgba(9, 9, 45, 0.358) ;
@@ -180,7 +183,7 @@
       }
       .expBody {
         border-radius: 10px;
-        box-shadow: 0 5px 5px 10px #38373779;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247);
       }
       .expBody p{
         font-size: 18px;
@@ -224,7 +227,7 @@
       overflow: hidden;
       height: 35vh;
       margin: 1.6%;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247);
       position: relative;
   }
   .skillBox img{
@@ -262,10 +265,9 @@
   }
   .uploadEducationData{
     width: 35%;
-    height: 60vh;
     margin: 2.5%;
     border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #38373751 ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247) ;
     position: absolute;
     top: 10vh;
     left:3.75%;
@@ -295,7 +297,7 @@
     height: 50vh;
     padding: 2%;
     border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #38373748 ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247) ;
     position: absolute;
     top: 19vh;
     right: 3.75%;
@@ -303,7 +305,7 @@
   .Item{
     margin: 5vh 0;
     border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #38373748 ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247) ;
   }
  
   .userData p{
@@ -324,7 +326,7 @@
       margin-top: 2%;
       overflow: hidden;
       border-radius: 5px;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247);
   }
   
   .imgcard {
@@ -391,69 +393,56 @@
       color:rgba(1, 1, 67, 0.825) ;
   } 
 
-
-  /* certificatePart */
-  .certificatePart{
+ /* certificatePart */
+  .certificates{
     width: 100%;
-    height: 100vh;
+    height: auto;
     margin-top: 3%;
     border-radius: 10px;
-    box-shadow: 0 5px 5px 10px rgba(128, 128, 128, 0.479) ;
-    position: relative;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.247) ;
   }
-.showData{
-    border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #55555556;
-    width: 45%;
-    height: 95vh;
-    position: absolute;
-    top: 2.5vh;
-    right: 2.5%;
-}
 .addPage{
-    position: absolute;
-    top: 10vh;
-    left: 10%;
+    width: 100%;
 }
 .addPage h2{
+    text-align: center;
     font-size: 45px;
     color: rgba(42, 42, 146, 0.648);
     font-weight: bold;
 }
-.formData {
-    box-shadow: 0 5px 5px 10px rgba(128, 128, 128, 0.479) ;
+.cer-data{
+    width: 80%;
+    margin: 1vh 10%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1) ;
     border-radius: 10px;
-    width: 45%;
-    height: 30vh;
-    position: absolute;
-    top: 25vh;
-    left: 2.5%;
 }
-.formData input{
-    width: 90%;
-    margin: 10px 5%;
+.cer-data input{
+    width: 80%;
+    margin: 1vh 10%;
     background-color: rgba(248, 238, 226, 0.638);
 }
-.formData button{
-    width: 25%;
-    height: 5vh;
+.cer-data button{
+    width: 20%;
+    margin: 2vh 15%;
     background-color: rgba(31, 31, 151, 0.648);
     border-radius: 25px;
     border: none;
     color: white;
-    margin: 2vh 12.5%;
+    font-size: 18px;
 }
 .certificate-item{
-    border-radius: 10px;
-    box-shadow: 0 5px 5px 10px #c9c7c73e;
+    height: auto;
+    margin: 2vh ;
+    padding: 1vh 15%;
 }
 .certificate-item p{
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     color: rgba(42, 42, 146, 0.648);
 }
 .certificate-item img{
     width: 100%;
+    border-radius: 10px;
 }
 
 }
@@ -548,23 +537,7 @@
     bottom: 2%;
     left: 31%;
 }
-/* educationPart */
-.educationPart{
-    width: 100%;
-    height: 60vh;
-}
-.educationCard{
-    height: 50vh;
-}
-.educationCard h2{
-    font-size: 30px;
-}
-.gradData {
-    height: 20vh;
-}
-.gradData h3{
-    font-size: 20px;
-}
+
  /* business card section */
  .businessCard{
     height: 110vh;
@@ -716,23 +689,7 @@
     bottom: 1%;
     left: 37.5%;
 }
-/* educationPart */
-.educationPart{
-    width: 100%;
-    height: 60vh;
-}
-.educationCard{
-    height: 50vh;
-}
-.educationCard h2{
-    font-size: 40px;
-}
-.gradData {
-    height: 20vh;
-}
-.gradData h3{
-    font-size: 28px;
-}
+
  /* business card section */
  .businessCard{
     height: 135vh;
@@ -884,26 +841,7 @@
     bottom: 3%;
     left: 10%;
 }
-/* educationPart */
-.educationPart{
-    width: 100%;
-    height: 60vh;
-}
-.educationCard{
-    height: 50vh;
-}
-.gradData hr{
-    display: none;
-}
-.educationCard h2{
-    font-size: 50px;
-}
-.gradData {
-    height: 25vh;
-}
-.gradData h3{
-    font-size: 30px;
-}
+
 /* business card section */
  .businessCard{
     height: 80vh;
@@ -1050,24 +988,7 @@ font-size: 15px;
     bottom: 3%;
     left: 12%;
 }
-/* educationPart */
-.educationPart{
-    width: 100%;
-    height: 60vh;
-}
-.educationCard{
-    height: 50vh;
-}
 
-.educationCard h2{
-    font-size: 50px;
-}
-.gradData {
-    height: 25vh;
-}
-.gradData h3{
-    font-size: 33px;
-}
 /* business card section */
  .businessCard{
     height: 85vh;
@@ -1206,24 +1127,7 @@ font-size: 15px;
     bottom: 3%;
     left: 18%;
 }
-/* educationPart */
-.educationPart{
-    width: 100%;
-    height: 60vh;
-}
-.educationCard{
-    height: 50vh;
-}
 
-.educationCard h2{
-    font-size: 58px;
-}
-.gradData {
-    height: 25vh;
-}
-.gradData h3{
-    font-size: 35px;
-}
 /* business card section */
  .businessCard{
     height: 100vh;

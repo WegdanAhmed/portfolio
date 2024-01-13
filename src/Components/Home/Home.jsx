@@ -12,14 +12,15 @@ import Image6 from "../assest/default-logo.png";
 
   const Home = () => {
     // handel staky navbar
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [visible, setVisible] = useState(true);
+    const [prevScrollPos, setPrevScrollPos] = useState(300);
+    const [visible, setVisible] = useState(false);
   
     useEffect(() => {
       const handleScroll = () => {
         const currentScrollPos = document.documentElement.scrollTop;
-        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+        setVisible(prevScrollPos < currentScrollPos );
         setPrevScrollPos(currentScrollPos);
+        console.log(currentScrollPos)
       };
   
       window.addEventListener('scroll', handleScroll);
@@ -75,7 +76,7 @@ import Image6 from "../assest/default-logo.png";
       photo: e.target.files[0],
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const newCertificate = {
@@ -173,6 +174,7 @@ import Image6 from "../assest/default-logo.png";
       displayBachelorsCertificate: URL.createObjectURL(educationData.bachelorsCertificate),
     });
   };
+// save the egucation data in localstorage
 
     return<>
     <div className="homePage">
@@ -181,7 +183,7 @@ import Image6 from "../assest/default-logo.png";
         {/* background firstSection*/}
      <video  src={V1} autoPlay muted loop></video>
         {/* navbar section */}
-    <nav className={`navbar navbar-expand-lg ${visible ? 'visible' : 'hidden'}`} id="navbar">
+    <nav className={`navbar navbar-expand-lg ${visible ? 'nav-visible' : 'nav-hidden'}`} id="navbar">
       
   <div className="nav-inner container-fluid">
     <div className="navbar-start">
@@ -487,30 +489,13 @@ import Image6 from "../assest/default-logo.png";
        {/* certificate part  */}
          
       
-       <div className="certificatePart container">
-       <div className="showData">
-      {certificates.map((certificate, index) => (
-        <div key={index} className="certificate-item m-3 row">
-          
-          <div className="col-md-8">
-          <div className="remove-icon m-1" onClick={() => removeCertificate(index)}>
-            <FontAwesomeIcon icon={faTimes} />
-          </div>
-            <p>{certificate.name}</p>
-            <p>Training Center: {certificate.trainingCenter}</p>
-            <p>Date: {certificate.date}</p>
-          </div>
-          <div className="col-md-4 d-flex justify-content-center">
-            {certificate.photo && <img src={URL.createObjectURL(certificate.photo)} alt="Certificate" />}
-          </div>
-        </div>
-      ))}
-    </div>
-      <div className="addPage">
+       <div className="certificates container">
+       <div className="addPage">
       <h2>Add Your Certificates</h2>
       </div>
-      <div className="formData">
-        <form onSubmit={handleSubmit}>
+      <hr />
+         <div className="cer-data">
+         <form onSubmit={handleSubmit}>
           <input
             className="form-control"
             type="text"
@@ -535,13 +520,34 @@ import Image6 from "../assest/default-logo.png";
             onChange={handleChange}
             placeholder="Date"
           />
+
           <input id="fileInput" className="selectImg" type="file" onChange={handlePhotoChange} accept="image/*" style={{ display: 'none' }} />
           <button type="button" onClick={handleButtonClick} className="uploadButton">
             Upload Image
           </button>
           <button type="submit">Add Certificate</button>
         </form>
-      </div>
+     
+         </div>
+        
+      {certificates.map((certificate, index) => (
+        <div key={index} className="certificate-item row">
+          
+          <div className="col-md-8">
+          <div className="remove-icon m-1" onClick={() => removeCertificate(index)}>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+            <p>{certificate.name}</p>
+            <p>Training Center: {certificate.trainingCenter}</p>
+            <p>Date: {certificate.date}</p>
+          </div>
+          <div className="col-md-4 d-flex justify-content-center">
+            {certificate.photo && <img src={URL.createObjectURL(certificate.photo)} alt="Certificate" />}
+          </div>
+        </div>
+      ))}
+    
+   
     </div>
         </div>  
 
