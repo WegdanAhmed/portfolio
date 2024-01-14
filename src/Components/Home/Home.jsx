@@ -204,8 +204,10 @@ import Image6 from "../assest/default-logo.png";
     <nav className={`navbar navbar-expand-lg ${visible ? 'nav-visible' : 'nav-hidden'}`} id="navbar">
       
   <div className="nav-inner container-fluid">
-    <div className="navbar-start">
-    <div className="userImage"></div>
+    <div className="navbar-start ">
+    <div className="userImage">
+      <img src={Image1}/>
+    </div>
     <div className="userName"> <h4>Ahmed Mohiy</h4></div>
     </div>
      
