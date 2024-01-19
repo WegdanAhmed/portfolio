@@ -11,18 +11,18 @@
     font-weight: bold;
   }
   /* Define the styles for the visible and hidden classes */
-  .nav-visible {
+  /* .nav-visible {
     position: fixed !important;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
     background-color: rgba(31, 39, 57, 0.837);
-  }
+  } */
 
-  .nav-hidden {
+  /* .nav-hidden {
     position: static !important;
-  }
+  } */
   .dropdown-toggle::after {
    display: none !important;
   }
@@ -53,10 +53,10 @@
       display: flex;
       justify-content: space-around;
     }
-    .userImage img{
+    /* .userImage img{
         width: 75px;
         border-radius:75px;
-    }
+    } */
     .userDetails {
       position: absolute;
       right: 35%;
@@ -120,8 +120,7 @@
       /* section two in home page(topSkills) */
       .topSkills{
           width: 100%;
-          height: 80vh;
-          margin-top: 3vh;
+          margin-top: 90vh;
           border-radius: 10px;
           overflow: hidden;
           box-shadow:0 2px 5px rgba(0, 0, 0, 0.247);
@@ -171,7 +170,6 @@
       /* Experiece Section  */
       .experiecePart{
           width: 100%;
-          height: 110vh;
           margin-top: 2%;
           overflow: hidden;
           background-color: rgba(208, 208, 208, 0.149);
@@ -289,7 +287,6 @@
     color: rgba(18, 18, 136, 0.648);
   }.userData{
     width: 50%;
-    height: 50vh;
     padding: 2%;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247) ;
@@ -500,7 +497,6 @@
  /* Experiece Section  */
  .experiecePart{
     margin-top: 2vh;
-    height: 140vh;
 }
 .expBody p{
   font-size: 12px;
@@ -532,7 +528,38 @@
     bottom: 2%;
     left: 31%;
 }
+  /* educationPart */
+  
+.educationPart h2{
+  font-size: 30px;
+}
+.uploadEducationData{
+  width: 90%;
+  left:5%;
+}
+.uploadEducationData button{
+  font-size: 15px;
+}
+.userData{
+  width: 90%;
+  top: 90vh;
+  right: 5%;
+}
+.Item{
+  margin: 5vh 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247) ;
+}
 
+.userData p{
+  padding: 2%;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(18, 18, 136, 0.648);
+}
+.userData img{
+  width: 100%;
+} 
  /* business card section */
  .businessCard{
     height: 110vh;
@@ -654,7 +681,6 @@
  /* Experiece Section  */
  .experiecePart{
     margin-top: 2vh;
-    height: 135vh;
 }
 .expBody p{
   font-size: 15px;
@@ -807,7 +833,6 @@
  /* Experiece Section  */
  .experiecePart{
     margin-top: 2vh;
-    height: 135vh;
 }
 .expBody p{
   font-size: 15px;
@@ -954,7 +979,6 @@ font-size: 15px;
  /* Experiece Section  */
  .experiecePart{
     margin-top: 2vh;
-    height: 125vh;
 }
 .expBody p{
   font-size: 15px;
@@ -1093,7 +1117,6 @@ font-size: 15px;
  /* Experiece Section  */
  .experiecePart{
     margin-top: 2vh;
-    height: 128vh;
 }
 .expBody p{
   font-size: 17px;

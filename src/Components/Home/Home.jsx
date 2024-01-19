@@ -29,24 +29,24 @@ import Image6 from "../assest/default-logo.png";
     //     window.removeEventListener('scroll', handleScroll);
     //   };
     // }, [prevScrollPos]);
-    const [prevScrollPos, setPrevScrollPos] = useState(0); // start at 0
-  const [visible, setVisible] = useState(false);
-  const navClassChangePosition = 300; // Position at which you want to change the class
+  //   const [prevScrollPos, setPrevScrollPos] = useState(0); // start at 0
+  // const [visible, setVisible] = useState(false);
+  // const navClassChangePosition = 300; // Position at which you want to change the class
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      // If we scroll past the navClassChangePosition, set visible to true, otherwise false
-      setVisible(currentScrollPos >= navClassChangePosition);
-      setPrevScrollPos(currentScrollPos);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  //     // If we scroll past the navClassChangePosition, set visible to true, otherwise false
+  //     setVisible(currentScrollPos >= navClassChangePosition);
+  //     setPrevScrollPos(currentScrollPos);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollPos]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [prevScrollPos]);
 
   // handel certificte part
     const [certificates, setCertificates] = useState([]);
@@ -201,13 +201,14 @@ import Image6 from "../assest/default-logo.png";
         {/* background firstSection*/}
      <video  src={V1} autoPlay muted loop></video>
         {/* navbar section */}
-    <nav className={`navbar navbar-expand-lg ${visible ? 'nav-visible' : 'nav-hidden'}`} id="navbar">
+        {/* className={`navbar navbar-expand-lg ${visible ? 'nav-visible' : 'nav-hidden'}`}  */}
+    <nav className="navbar navbar-expand-lg" id="navbar">
       
   <div className="nav-inner container-fluid">
     <div className="navbar-start ">
-    <div className="userImage">
+    {/* <div className="userImage">
       <img src={Image1}/>
-    </div>
+    </div> */}
     <div className="userName"> <h4>Ahmed Mohiy</h4></div>
     </div>
      
